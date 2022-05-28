@@ -1,0 +1,76 @@
+<div class='text-center'>
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  {{#if logged_in}}
+    {{#if comments.length}}
+          <div class='comment-list'>
+      {{#each comments as |comment|}}
+        <div class='row mb-5 comment'>
+          <div class='col-md-5'>
+            <p>
+              {{comment.description}}
+            </p>
+            <p>Created by
+              {{comment.user.name}}
+              on
+              {{format_date comment.date_created}}</p>
+          </div>
+            {{#if (ifUser comment.user_id  ../logged_id)}}
+            <div class='col-md-4'>
+                <button
+                class='btn btn-sm btn-danger'
+                comment-id='{{comment.id}}'
+                blog-id='{{../id}}'
+                >DELETE</button>
+                <button
+                onclick="location.href='/update-comment/{{comment.id}}'"
+                class='btn btn-sm btn-info'
+                button-id='{{comment.id}}'
+                blog-id='{{../id}}'
+                >UPDATE</button>
+            </div>
+            {{/if}}
+        </div>
+      {{/each}}
+      </div>
+    {{/if}}
+          <div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>Post a comment:</h3>
+
+    <form class='form new-comment-form' blog-id='{{id}}'>
+      <div class='form-group'>
+        <label for='comment-desc'>description:</label>
+        <textarea class='form-input'  id='comment-desc' name='comment-desc'></textarea>
+      </div>
+      <div class='form-group'>
+        <button type='submit' class='btn btn-primary'>CREATE</button>
+      </div>
+    </form>
+  </div>
+  {{else}}
+    <p>
+      {{#if comments.length}}
+      <div class='comment-list'>
+        {{#each comments as |comment|}}
+          <div class='row mb-4 comment'>
+            <div class='col-md-5'>
+              <h2>
+                {{comment.description}}
+              </h2>
+              <p>Created by
+                {{comment.user.name}}
+                on
+                {{format_date comment.date_created}}</p>
+            </div>
+          </div>
+        {{/each}}
+        </div>
+      {{/if}}
+    </p>
+  {{/if}}
+
+</div>
+
+<script src='/js/comment.js'></script>
