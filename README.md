@@ -38,7 +38,8 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 
 ## Heroku:
 ---
-[![Heroku-Link](images/herokuscreenshot.png)]()
+[![Heroku-Link](images/heroku-screenshot.png)](https://stark-woodland-79010.herokuapp.com/)
+https://stark-woodland-79010.herokuapp.com/
   
 <br>
 
@@ -51,6 +52,7 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 ## Screenshots
 ---
 [Screenshot1](images/Screenshot1.png)  "Homepage"
+<img src="./images/Screenshot1.png">
 
 <br>
   
@@ -74,11 +76,15 @@ Install MySQL to your computer. You will also need to have installed MySQL to yo
 <br>
 <br>
 
-Also, much thanks to BCS Learning Assistants for getting me through some of the challenges of developing this application and deploying it. 
+Thank you so much to BCS assistant for helping me deploy this to heroku. 
 
 <br>
 
 ## Author:
 <br>
 Brett Hockridge
+
+brettstephenhockridge@yahoo.com
+
+[BroBrett](https://github.com/BroBrett/Tech-Blog)
 
